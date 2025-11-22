@@ -24,7 +24,16 @@ Cone get_cone(std::vector<float> &x_cones, std::vector<float> &y_cones, std::vec
     Cone cone_out;  //This is the variable you will have to fill in order to storage the selected x and y coordinates 
 
     //////////////// YOUR FUNCTION GOES HERE //////////////////////////
+    
+    //Assign values from the selected index (i_get) in the input vectors to the cone_out variable //
+    cone_out.x = x_cones.at(i_get);
+    cone_out.y = y_cones.at(i_get);
+    cone_out.colour = c_cones.at(i_get);
 
+    //Remove the elements at index (i_get) of each vector//
+    x_cones.erase(x_cones.begin()+(i_get));
+    y_cones.erase(y_cones.begin()+(i_get));
+    c_cones.erase(c_cones.begin()+(i_get));
 
     //////////////////////////////////////////////////////////////////
 
